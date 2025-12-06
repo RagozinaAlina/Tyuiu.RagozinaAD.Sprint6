@@ -22,10 +22,18 @@ namespace Tyuiu.RagozinaAD.Sprint6.Task4.V1
 
                 valueArray = ds.GetMassFunction(Startstep, StopStep);
 
-                textBoxResult.Text = "";
+
+
+                this.chartRes.ChartAreas[0].AxisX.Title = "Ось X";
+                this.chartRes.ChartAreas[0].AxisY.Title = "Ось Y";
+
+                textBoxVyvod.Text = "";
+                chartRes.Series[0].Points.Clear();
                 for (int i = 0; i <= len - 1; i++)
                 {
-                    this.textBoxResult.AppendText(valueArray[i] + Environment.NewLine);
+
+                    this.chartRes.Series[0].Points.AddXY(Startstep, valueArray[i]);
+                    this.textBoxVyvod.AppendText(valueArray[i] + Environment.NewLine);
                     Startstep++;
                 }
 
@@ -36,24 +44,24 @@ namespace Tyuiu.RagozinaAD.Sprint6.Task4.V1
             }
         }
 
-        private void FormSprint_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonHelp_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Таск 4 выполнила студентка АСОиУб-25-1 Рагозина А.Д ");
+        }
+
+        private void chartRes_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
             try
             {
-                string path = @"C:\Users\Алина\Desktop\source\repos\Tyuiu.RagozinaAD.Sprint6\Tyuiu.RagozinaAD.Sprint6.Task4.V1\bin\Debug\net8.0-windows\OutPutDataFileTask4V1.txt";
-                File.WriteAllText(path, textBoxResult.Text);
+                string path = @"C:\Users\Алина\Desktop\source\repos\Tyuiu.RagozinaAD.Sprint6\DataSprint6\OutPutDataFileTask4V1.txt";
+                File.WriteAllText(path, textBoxVyvod.Text);
 
-                DialogResult dialogResult = MessageBox.Show("Файл " + path + " сохранен успешно\n Открать его в блокноте?", "Сообщение", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult dialogResult = MessageBox.Show("Файл " + path + " сохранен успешно\n Открать его в блокноте?", "Сообщение", MessageBoxButtons.YesNo, MessageBoxIcon.Information); ;
 
                 if (dialogResult == DialogResult.OK)
                 {
@@ -67,11 +75,6 @@ namespace Tyuiu.RagozinaAD.Sprint6.Task4.V1
             {
                 MessageBox.Show("Сбой при сохранении файла", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
