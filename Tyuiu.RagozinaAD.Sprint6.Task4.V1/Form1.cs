@@ -12,15 +12,15 @@ namespace Tyuiu.RagozinaAD.Sprint6.Task4.V1
         {
             try
             {
-                int Startstep = Convert.ToInt32(textBoxStart.Text);
-                int StopStep = Convert.ToInt32(textBoxStop.Text);
+                int startStep = Convert.ToInt32(textBoxStart.Text);
+                int stopStep = Convert.ToInt32(textBoxStop.Text);
 
-                int len = ds.GetMassFunction(Startstep, StopStep).Length;
+                int len = ds.GetMassFunction(startStep, stopStep).Length;
 
                 double[] valueArray;
                 valueArray = new double[len];
 
-                valueArray = ds.GetMassFunction(Startstep, StopStep);
+                valueArray = ds.GetMassFunction(startStep, stopStep);
 
 
 
@@ -32,9 +32,9 @@ namespace Tyuiu.RagozinaAD.Sprint6.Task4.V1
                 for (int i = 0; i <= len - 1; i++)
                 {
 
-                    this.chartRes.Series[0].Points.AddXY(Startstep, valueArray[i]);
+                    this.chartRes.Series [0].Points.AddXY(startStep, valueArray[i]);
                     this.textBoxVyvod.AppendText(valueArray[i] + Environment.NewLine);
-                    Startstep++;
+                    startStep++;
                 }
 
             }
@@ -61,9 +61,8 @@ namespace Tyuiu.RagozinaAD.Sprint6.Task4.V1
                 string path = @"C:\Users\Алина\Desktop\source\repos\Tyuiu.RagozinaAD.Sprint6\Tyuiu.RagozinaAD.Sprint6.Task4.V1\bin\Debug\net8.0-windows\OutPutDataFileTask4V1.txt";
                 File.WriteAllText(path, textBoxVyvod.Text);
 
-                DialogResult dialogResult = MessageBox.Show("Файл " + path + " сохранен успешно\n ", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
-
-                if (dialogResult == DialogResult.OK)
+                DialogResult dialogResult = MessageBox.Show("Файл " + path + " сохранен успешно\n Открыть его в блокноте? ", "Сообщение", MessageBoxButtons.YesNo, MessageBoxIcon.Information); 
+                if (dialogResult == DialogResult.Yes)
                 {
                     System.Diagnostics.Process txt = new System.Diagnostics.Process();
                     txt.StartInfo.FileName = "notepad.exe";

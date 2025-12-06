@@ -31,6 +31,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             chartRes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             groupBoxTask = new GroupBox();
             groupBoxTask1 = new GroupBox();
@@ -70,6 +71,9 @@
             chartRes.Size = new Size(618, 441);
             chartRes.TabIndex = 0;
             chartRes.Text = "График";
+            title1.Name = "Title1";
+            title1.Text = "График функции";
+            chartRes.Titles.Add(title1);
             chartRes.Click += chartRes_Click;
             // 
             // groupBoxTask
