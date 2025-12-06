@@ -62,6 +62,7 @@
             chartRes.Legends.Add(legend1);
             chartRes.Location = new Point(487, 120);
             chartRes.Name = "chartRes";
+            chartRes.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Light;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
