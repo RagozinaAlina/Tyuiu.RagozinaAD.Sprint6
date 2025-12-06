@@ -50,7 +50,7 @@ namespace Tyuiu.RagozinaAD.Sprint6.Task4.V1
         {
             try
             {
-                string path = @"C:\Users\Алина\Desktop\source\repos\Tyuiu.RagozinaAD.Sprint6\DataSprint6\OutPutDataFileTask4V1.txt";
+                string path = @"C:\Users\Алина\Desktop\source\repos\Tyuiu.RagozinaAD.Sprint6\Tyuiu.RagozinaAD.Sprint6.Task4.V1\bin\Debug\net8.0-windows\OutPutDataFileTask4V1.txt";
                 File.WriteAllText(path, textBoxResult.Text);
 
                 DialogResult dialogResult = MessageBox.Show("Файл " + path + " сохранен успешно\n Открать его в блокноте?", "Сообщение", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
