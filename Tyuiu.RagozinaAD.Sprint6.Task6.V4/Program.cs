@@ -1,4 +1,4 @@
-namespace WinFormsAppChart
+namespace Tyuiu.RagozinaAD.Sprint6.Task6.V4
 {
     internal static class Program
     {
