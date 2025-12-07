@@ -33,6 +33,7 @@ namespace Tyuiu.RagozinaAD.Sprint6.Task4.V1.Test
             res = new double[len];
             res = ds.GetMassFunction(startValue, stopValue);
             CollectionAssert.AreEqual(valueWaitArray, res);
+
         }
     }
 }

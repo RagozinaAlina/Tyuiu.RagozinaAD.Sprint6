@@ -12,7 +12,7 @@ namespace Tyuiu.RagozinaAD.Sprint6.Task4.V1.Lib
             int c = 0;
             for (int x = startValue; x <= stopValue; x++)
             {
-                y = Math.Round(((Math.Sin(x) / (x +1.2)) + Math.Cos(x) * 7 * x - 2), 2);
+                y = Math.Round(((Math.Sin(x) / (x + 1.2)) + Math.Cos(x) * 7 * x - 2), 2);
                 valueArray[c] = y;
                 c++;
             }
