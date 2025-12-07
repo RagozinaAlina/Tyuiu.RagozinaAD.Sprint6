@@ -5,24 +5,26 @@ namespace Tyuiu.RagozinaAD.Sprint6.Task6.V4.Lib
     {
         public string CollectTextFromFile(string path)
         {
+            string[] liner;
             string resStr = "";
-
             using (StreamReader reader = new StreamReader(path))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    string[] itog = line.Split(' ');
-                    for (int i = 0; i < itog.Length; i++)
+                    liner = line.Trim().Split(' ');
+                    foreach (string c in liner)
                     {
-                        if (itog[i].Contains("n"))
+                        if (c.Contains('n'))
                         {
-                            resStr = resStr + " " + itog[i];
+                            resStr += " " + c;
                         }
                     }
+
                 }
-                return resStr;
             }
+            return resStr.Trim();
         }
     }
 }
+
